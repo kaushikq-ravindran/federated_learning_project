@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>BDML</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container" style="width: 650px;">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-center">BDML</h1>
+          <hr/>
+          <br/>
+          <div id="loader">
+            <p class="text-center">Loading...</p>
+          </div>
+          <div id="content" style="display: none;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Model Hash</th>
+                  <th scope="col">Remaining Votes</th>
+                </tr>
+              </thead>
+              <tbody id="txnsResults">
+              </tbody>
+            </table>
+            <hr/>
+            <form onSubmit="App.castVote();">
+              <div class="form-group">
+                <label for="modelsSelect">Select Model</label>
+                <select class="form-control" id="modelsSelect">
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary">Vote</button>
+              <hr />
+            </form>
+            <p id="accountAddress" class="text-center"></p>
+            <hr/>
+            <br/>
+            <form onSubmit="App.addModel();">
+              <div>
+                <label for="model">Add Model</label><br/>
+                <input type="text" id="model"></input>
+              <button type="submit" class="btn btn-primary">Add</button>
+              </div>
+              <hr />
+            </form>
+            <hr/>
+            <br/>
+            <form onSubmit="App.addParticipant();">
+              <div>
+                <label for="participant">Add Participant</label><br/>
+                <input type="text" id="participant"></input>
+                <button type="submit" class="btn btn-primary">Add</button>
+              </div>
+              <hr />
+            </form>
+            <hr/>
+            <br/>
+            <p id="numTxns" class="text-center"></p>
+            <p id="blockNumber" class="text-center"></p>
+            <p id="presentModel" class="text-center"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
